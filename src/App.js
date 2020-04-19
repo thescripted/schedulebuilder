@@ -1,12 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Day from "./Day";
 
 const App = () => {
-  return React.createElement(
-    "div",
-    {},
-    React.createElement("h1", {}, "Adopt Me!")
-  );
+  return <Day />;
 };
 
 ReactDOM.render(React.createElement(App), document.getElementById("root"));
