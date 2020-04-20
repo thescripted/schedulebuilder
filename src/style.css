@@ -21,7 +21,11 @@ h1 {
 }
 
 .modal-form {
-  position: relative;
-  left: 50%;
-  top: 50%;
+  background: #aaa;
+  border: 1px solid #d0cccc;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  margin: 100px auto 0;
+  width: 60%;
+  transform: translateY(-50vh);
+  opacity: 1;
 }
