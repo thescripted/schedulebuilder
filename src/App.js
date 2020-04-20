@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Day from "./Day";
+import Calendar from "./Calendar";
 
 const App = () => {
-  return <Day />;
+  return <Calendar />;
 };
 
 ReactDOM.render(React.createElement(App), document.getElementById("root"));

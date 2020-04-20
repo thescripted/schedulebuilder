@@ -1,0 +1,27 @@
+html {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 24px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.calendar-day {
+  margin: 25px;
+  float: left;
+  text-align: center;
+}
+
+.hour-box h2 {
+  font-size: 18px;
+}
+
+.modal-form {
+  position: relative;
+  left: 50%;
+  top: 50%;
+}

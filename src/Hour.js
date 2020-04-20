@@ -1,13 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Modal from "./Modal";
 
-const Hour = props => {
+const Hour = ({ time, onFormSubmitted }) => {
   const [showModal, setShowModal] = useState(false);
   const [text, setText] = useState("Add some events");
-  const time = props.time;
+
+  const onChange = useCallback(e => setText(e.target.value), []);
 
   const toggleModal = () => {
     setShowModal(!showModal);
+  };
+
+  const handleClick = () => {
+    onFormSubmitted(time);
+    toggleModal();
   };
 
   return (
@@ -23,15 +29,9 @@ const Hour = props => {
       </div>
       {showModal ? (
         <Modal time={time}>
-          <form>
-            <h1>Add Event for {time}</h1>
-            <input
-              type="text"
-              placeholder="Add your Event"
-              onChange={e => setText(e.target.value)}
-            />
-            <button onClick={toggleModal}>Submit</button>
-          </form>
+          <h1>Add Event for {time}</h1>
+          <input type="text" placeholder="Add your Event" onChange={onChange} />
+          <button onClick={handleClick}>Submit</button>
         </Modal>
       ) : null}
     </>
