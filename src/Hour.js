@@ -7,13 +7,9 @@ const Hour = ({ time, onFormSubmitted }) => {
 
   const onChange = useCallback(e => setText(e.target.value), []);
 
-  const toggleModal = () => {
-    setShowModal(!showModal);
-  };
-
   const handleClick = () => {
     onFormSubmitted(time);
-    toggleModal();
+    setShowModal(!showModal);
   };
 
   return (
@@ -22,7 +18,9 @@ const Hour = ({ time, onFormSubmitted }) => {
         className="hour-box"
         role="button"
         tabIndex={0}
-        onClick={toggleModal}
+        onClick={() => {
+          setShowModal(!showModal);
+        }}
       >
         <h2>{text}</h2>
         <p>{time}</p>
