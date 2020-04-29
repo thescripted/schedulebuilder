@@ -1,7 +1,7 @@
 import React from "react";
 import Hour from "./Hour";
 
-const Day = ({ date }) => {
+const Day = ({ date, formatModalDate }) => {
   const hours = [
     "8:00 - 9:00",
     "9:00 - 10:00",
@@ -10,8 +10,12 @@ const Day = ({ date }) => {
     "12:00 - 1:00"
   ];
 
-  const handleSubmission = time => {
-    console.log(`Alright boomer I got the time: ${time}`);
+  const handleDate = time => {
+    formatModalDate(date, time);
+  };
+
+  const handleTime = time => {
+    handleDate(time);
   };
 
   return (
@@ -20,9 +24,7 @@ const Day = ({ date }) => {
         <h1>{date}</h1>
       </div>
       {hours.map((hour, index) => {
-        return (
-          <Hour time={hour} key={index} onFormSubmitted={handleSubmission} />
-        );
+        return <Hour time={hour} key={index} handleTime={handleTime} />;
       })}
     </div>
   );
